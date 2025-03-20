@@ -1,0 +1,25 @@
+:root {
+    @each $color, $value in $theme-colors {
+        --#{$color}: #{$value};
+    }
+
+    @each $color, $value in $theme-colors-rgb {
+        --#{$color}-rgb: #{$value};
+    }
+
+    --body-font-family: #{$font-family-base};
+    --body-font-size: #{$font-size-base};
+    --body-font-weight: #{$font-weight-base};
+    --body-line-height: #{$line-height-base};
+    --body-color: #{$body-color};
+    --body-text-align: #{$body-text-align};
+    --body-bg:  #{$body-bg};
+
+    --border-radius: #{$border-radius};
+    --border-radius-sm: #{$border-radius-sm};
+    --border-radius-lg: #{$border-radius-lg};
+    --border-radius-xl: #{$border-radius-xl};
+    --border-radius-xxl: #{$border-radius-xxl};
+    --border-radius-2xl: var(--border-radius-xxl);
+    --border-radius-pill: #{$border-radius-pill};
+}

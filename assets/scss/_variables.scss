@@ -1,0 +1,146 @@
+$primary:   #1e30f3;
+$secondary: #e21e80;
+$white:     #ffffff;
+$light:     #f8f9fa;
+$gray:      #6c757d;
+$dark:      #212529;
+$black:     #000000;
+
+$primary-rgb:   30, 48, 243;
+$secondary-rgb: 226, 30, 128;
+$white-rgb:     255, 255, 255;
+$light-rgb:     248, 249, 250;
+$gray-rgb:      108, 117, 125;
+$dark-rgb:      33, 37, 41;
+$black-rgb:     0, 0, 0;
+
+$theme-colors: (
+    primary: $primary,
+    secondary: $secondary,
+    white: $white,
+    light: $light,
+    gray: $gray,
+    dark: $dark,
+    black: $black
+);
+
+$theme-colors-rgb: (
+    primary-rgb: $primary-rgb,
+    secondary-rgb: $secondary-rgb,
+    white-rgb: $white-rgb,
+    light-rgb: $light-rgb,
+    gray-rgb: $gray-rgb,
+    dark-rgb: $dark-rgb,
+    black-rgb: $black-rgb
+);
+
+$enable-rounded:              true;
+$enable-gradients:            false;
+$enable-grid-classes:         true;
+$enable-container-classes:    true;
+$enable-important-utilities:  true;
+
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+);
+
+$gutters: $spacers;
+
+$body-text-align:   null;
+$body-color:        $dark;
+$body-bg:           $white;
+
+$font-family-base: 'Plus Jakarta Sans';
+$font-size-base: 1rem;
+
+$font-weight-lighter:         lighter;
+$font-weight-light:           300;
+$font-weight-normal:          400;
+$font-weight-medium:          500;
+$font-weight-semibold:        600;
+$font-weight-bold:            700;
+$font-weight-bolder:          bolder;
+
+$font-weight-base:            $font-weight-normal;
+
+$line-height-base:            1.5;
+$line-height-sm:              1.25;
+$line-height-lg:              2;
+
+$h1-font-size:  $font-size-base * 2.5;
+$h2-font-size:  $font-size-base * 2;
+$h3-font-size:  $font-size-base * 1.75;
+$h4-font-size:  $font-size-base * 1.5;
+$h5-font-size:  $font-size-base * 1.25;
+$h6-font-size:  $font-size-base;
+
+$font-sizes: (
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size
+);
+
+$headings-margin-bottom:      $spacer * .5;
+$headings-font-family:        null;
+$headings-font-style:         null;
+$headings-font-weight:        500;
+$headings-line-height:        1.2;
+$headings-color:              inherit;
+
+$paragraph-margin-bottom:   1rem;
+
+$display-font-sizes: (
+    1: 5rem,
+    2: 4.5rem,
+    3: 4rem,
+    4: 3.5rem,
+    5: 3rem,
+    6: 2.5rem
+);
+
+$display-font-weight: 300;
+$display-line-height: $headings-line-height;
+
+$lead-font-size:              $font-size-base * 1.25;
+$lead-font-weight:            300;
+
+$small-font-size:             .875em;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+
+$grid-columns:      12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns:  6;
+
+$container-padding-x: $grid-gutter-width;
+
+$border-radius:               .375rem;
+$border-radius-sm:            .25rem;
+$border-radius-lg:            .5rem;
+$border-radius-xl:            1rem;
+$border-radius-xxl:           2rem;
+$border-radius-pill:          50rem;
