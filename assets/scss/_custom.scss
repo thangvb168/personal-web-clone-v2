@@ -1,5 +1,3 @@
-@import '../scss/base.scss';
-
 html,
 body {
     height: 100%;
@@ -435,10 +433,6 @@ body {
 /* End Button Component */
 
 /* Nav */
-.collapse {
-    display: none;
-}
-
 .collapse-btn {
     display: flex;
     align-items: center;
@@ -456,13 +450,7 @@ body {
 }
 
 @media (min-width: 992px) {
-    .collapse {
-        display: block;
-    }
-    
-    .collapse-btn {
-        display: none;
-    }
+
 }
 /* End Nav */
 
@@ -562,108 +550,168 @@ body {
     }
 }
 
-.dropdown {
-    position: relative;
-
-    &.dropdown-mega-menu {
-        position: static;
-        width: 100%;
-
-        .dropdown-menu {
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            padding-top: 1rem;
-            width: 100%;
-
-            .mega-menu {
-                width: 100%;
-                padding: 0;
-
-                & > li {
-                    ul {
-                        padding-left: 0;
-                        margin-bottom: 0;
-
-                        .dropdown-item {
-                            display: block;
-                            padding: .5rem 1.25rem;
-                            width: 100%;
-                            cursor: pointer;
-
-                            &:hover {
-                                .dropdown-item {
-                                    color: red;
-                                }
-                            }
-                        }
-                    }
-                    
-                }
-
-                & > li:not(:last-child) {
-                    border-right: 1px solid var(--gray);
-                }
-            }
-        }
-    }
-
-    .dropdown-menu {
-        --dropdown-menu-border-radius: 0;
-        --dropdown-menu-padding-x: 0;
-        --dropdown-menu-padding-y: 0;
-        --dropdown-bg-color: var(--white);
-        position: absolute;
-        top: 100%;
-        z-index: -1;
-        min-width: 14rem;
-        // background-color: var(--dropdown-bg-color);
-        background-color: var(--dropdown-bg-color);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        text-align: start;
-        padding: var(--dropdown-menu-padding-x) var(--dropdown-menu-padding-y);
-        border-radius: var(--dropdown-menu-border-radius);
-        transform: translateY(10%);
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-
-        li {
-            margin-left: 0;
-
-            .dropdown-header {
-                display: block;
-                padding: .5rem 1.25rem;
-                width: 100%;
-                cursor: pointer;
-                font-weight: bolder;
-                font-style: 14px;
-            }
-
-            .dropdown-item {
-                display: block;
-                padding: .5rem 1.25rem;
-                width: 100%;
-                cursor: pointer;
-                font-weight: normal;
-                font-style: 14px;
-
-                &:hover {
-                    color: $primary;
-                }
-            }
-        }
-    }
-
-    &:hover {
-        .dropdown-menu {
-            z-index: 50;
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-}
-
 .relative {
     position: relative;
 }
+
+// Nav
+.navbar-collapse {
+    width: 100%;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    position: absolute;
+    background-color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex;
+        position: static;
+        width: auto;
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .collapse-btn {
+        display: none;
+    }
+}
+// End Nav
+
+// Dropdown
+.nav-link {
+    padding: 1.5rem .5rem;
+    font-size: 1rem;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    li {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    & > li > .nav-link {
+        font-weight: bold;
+        padding: .625rem;
+        text-transform: capitalize;
+        font-size: .875rem;
+    }
+
+    .dropdown-menu {
+        background-color: #fff;
+        border: 0;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+        min-width: 14rem;
+        display: none;
+        
+        &.show {
+            display: block;
+        }
+    }
+
+    .dropdown-header,
+    .dropdown-item {
+        padding: .5rem 1.25rem;
+        font-size: .875rem;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+    .dropdown-header {
+        font-weight: 800;
+    }
+
+    .dropdown-mego-menu {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        flex-direction: row;
+        max-height: none;
+        overflow: visible;
+        box-shadow: none;
+
+        & > li:hover {
+            .dropdown-menu {
+                opacity: 1;
+                visibility: visible;                
+                transform: translateY(0);
+            }
+        }
+
+        li {
+            &.dropdown-mega-menu {
+                position: static;
+
+                .mega-menu {
+                    padding: 1rem 0;
+                }
+            }
+        }
+
+        .dropdown-menu {
+            display: block;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10%);
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: all .3s ease-in-out;
+            box-shadow: 0 13px 42px 11px rgba(0, 0, 0, .15);
+        }
+    }
+}
+
+main {
+    padding-top: 3.875rem;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    opacity: 1;
+    background-color: #fff;
+    width: 100%;
+}
+
+// End Dropdown
