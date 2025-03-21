@@ -13,16 +13,13 @@ This is the second version of the project. The previous version ([Link github](h
 ## Project Structure
 ```
 personal-web-clone-v2/
-│   contact.html         # Contact page
-│   index.html           # Home page
-│   projects.html        # Projects page
-│   README.md            # Project documentation
-│   resume.html          # Resume page
+│   contact.html                # Contact page
+│   index.html                  # Home page
+│   projects.html               # Projects page
+│   README.md                   # Project documentation
+│   resume.html                 # Resume page
 │
 └───assets/
-    ├───css/
-    │       styles.scss
-    │
     ├───img/
     │       profile.png
     │
@@ -30,7 +27,26 @@ personal-web-clone-v2/
     │       scripts.js
     │
     └───scss/
-        ├───...
+        ├───index.scss          # Main SCSS file ( Render file .css & .css.map )
+        ├───_custom.scss        # Custom styles
+        ├───_base.scss          # Base styles
+        ├───_function.scss      # Functions collection for SCSS
+        ├───_variables.scss     # Variables
+        ├───_mixins.scss        # Mixins collection
+        ├───mixins              # Mixins folder
+        |   ├───...
+        |
+        ├───_utilities.scss     # Utilities collection
+        |───utilities           # Utilities folder
+        |   ├───...
+        |
+        |───_root.scss          # Root styles
+        ├───_reboots.scss       # Reset styles
+        ├───_type.scss          # Typography styles
+        ├───_containers.scss    # Container styles
+        ├───_grid.scss          # Grid system styles
+        |───vendors             # Vendor styles folder
+            ├───_rfs.scss       # Responsive font size styles
 ```
 ## Getting Started
 
@@ -54,9 +70,9 @@ There are two ways to compile SCSS into CSS:
 
 #### Step 1: Install Extensions Live Sass Compiler
 
-#### Step 2: Click on the "Watch Sass" button in the bottom right corner.
+#### Step 2: Click on the "Watch Sass" button in the bottom right corner and ensure the [`assets/scss`](./assets/scss/) folder contains the generated `index.css` file.
 
-### 3: Open `index.html` in Browser to test NeoBootstrap
+### 3: Open [`index.html`](./index.html) in Browser to test NeoBootstrap
 
 ## Differences from v1
 - Upgraded from pure CSS to SCSS
