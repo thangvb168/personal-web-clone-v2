@@ -403,6 +403,24 @@ body {
         --btn-hover-border-color: #1826c2;
     }
 
+    &.btn-secondary {
+        --btn-color: #ffffff;
+        --btn-bg: #e21e80;
+        --btn-border-color: #e21e80;
+        --btn-hover-color: #fff;
+        --btn-hover-bg: #d81b74;
+        --btn-hover-border-color: #d81b74;
+    }
+
+    &.btn-gray {
+        --btn-color: #fff;
+        --btn-bg: #6c757d;
+        --btn-border-color: #6c757d;
+        --btn-hover-color: #fff;
+        --btn-hover-bg: #6c757d;
+        --btn-hover-border-color: #6c757d;
+    }
+
     &.btn-outline-dark {
         --btn-color: #212529;
         --btn-border-color: #212529;
@@ -714,4 +732,9 @@ nav {
     width: 100%;
 }
 
+
+.btn-close {
+    outline: none;
+    border: none;
+}
 // End Dropdown
